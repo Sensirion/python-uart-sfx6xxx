@@ -1,0 +1,1828 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API Documentation &mdash; sensirion_uart_sfc6xxx 0.1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Build documentation" href="build-documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> sensirion_uart_sfc6xxx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sfc6xxx">SFC6XXX</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-sensirion_uart_sfc6xxx.device">Sfc6xxxDevice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sensirion_uart_sfc6xxx.commands">Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sensirion_uart_sfc6xxx.result_types">Result Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sensirion_uart_sfc6xxx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>API Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sfc6xxx">
+<h2>SFC6XXX<a class="headerlink" href="#sfc6xxx" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-sensirion_uart_sfc6xxx.device">
+<span id="sfc6xxxdevice"></span><h3>Sfc6xxxDevice<a class="headerlink" href="#module-sensirion_uart_sfc6xxx.device" title="Permalink to this headline">¶</a></h3>
+<p>The class Sfc6xxxDeviceBase implements the low level interface of the sensor.
+The class Sfc6xxxDevice extends the Sfc6xxxDeviceBase. It provides additional functions to ease the use of the
+sensor.</p>
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.device.</code><code class="descname">Sfc6xxxDeviceBase</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Low level API implementation of SFC6XXX</p>
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_setpoint">
+<code class="descname">set_setpoint</code><span class="sig-paren">(</span><em>scaling</em>, <em>setpoint</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_setpoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_setpoint" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>scaling</strong> – 0x01: Setpoint represents a physical value. The range depends on the
+flow unit and calibration range.</li>
+<li><strong>setpoint</strong> – The new setpoint with the specified scaling.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_setpoint">
+<code class="descname">get_setpoint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_setpoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_setpoint" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return setpoint:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The current setpoint with the specified scaling.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.read_measured_value">
+<code class="descname">read_measured_value</code><span class="sig-paren">(</span><em>scaling</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.read_measured_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.read_measured_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The command returns the latest measured flow value. The value can be read as
+physical or normalized value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scaling</strong> – 0x01: Flow represents a physical value. The range depends on the flow
+unit and calibration range.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return measured_value:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">The latest measured flow with the specified scaling.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_setpoint_and_read_measured_value">
+<code class="descname">set_setpoint_and_read_measured_value</code><span class="sig-paren">(</span><em>scaling</em>, <em>setpoint</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_setpoint_and_read_measured_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_setpoint_and_read_measured_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command is a combination of the two commands “Set Setpoint (0x00)” and
+“Read Measured Value (0x08)”. It is intended for process data exchange
+(setpoint and flow) and safes a lot of protocol overhead compared to separate
+command usage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>scaling</strong> – 0x01: Setpoint/flow represents physical values. The range         depends on
+the flow unit and calibration range.</li>
+<li><strong>setpoint</strong> – The new setpoint.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return measured_value:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first last">The latest measured flow.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_user_controller_gain">
+<code class="descname">set_user_controller_gain</code><span class="sig-paren">(</span><em>gain</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_user_controller_gain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_user_controller_gain" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gain</strong> – The user controller gain to set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_user_controller_gain">
+<code class="descname">get_user_controller_gain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_user_controller_gain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_user_controller_gain" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return gain:</th><td class="field-body">The current user controller gain.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_user_init_step">
+<code class="descname">set_user_init_step</code><span class="sig-paren">(</span><em>init_step</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_user_init_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_user_init_step" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>init_step</strong> – the user init step to set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_user_init_step">
+<code class="descname">get_user_init_step</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_user_init_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_user_init_step" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return init_step:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The current user init step.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.measure_raw_flow">
+<code class="descname">measure_raw_flow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.measure_raw_flow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.measure_raw_flow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the measured raw flow ticks from the sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return flow:</th><td class="field-body">Measured raw flow in ticks.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.measure_raw_thermal_conductivity_with_closed_valve">
+<code class="descname">measure_raw_thermal_conductivity_with_closed_valve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.measure_raw_thermal_conductivity_with_closed_valve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.measure_raw_thermal_conductivity_with_closed_valve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a thermal conductivity measurement and return the measured raw tick
+value. The valve is automatically closed during the measurement.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return thermal_conductivity:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Measured raw thermal conductivity in ticks.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.measure_temperature">
+<code class="descname">measure_temperature</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.measure_temperature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.measure_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the temperature of flow sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return temperature:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Measured temperature [°C].</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_number_of_calibrations">
+<code class="descname">get_number_of_calibrations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_number_of_calibrations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_number_of_calibrations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of calibrations, i.e. how many calibration the device memory is
+able to hold.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return number_of_calibrations:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Number of calibrations.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_calibration_validity">
+<code class="descname">get_calibration_validity</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_calibration_validity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_calibration_validity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether there exists a valid calibration at a specific index or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – The index to check whether there is a valid calibration or not.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return validity:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Whether there exists a valid calibration at the specified index or not.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_calibration_gas_id">
+<code class="descname">get_calibration_gas_id</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_calibration_gas_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_calibration_gas_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas ID of a specific calibration index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – The calibration index to read the requested information from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return gas_id:</th><td class="field-body">The read gas ID.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_calibration_gas_unit">
+<code class="descname">get_calibration_gas_unit</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_calibration_gas_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_calibration_gas_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas unit of a specific calibration index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – The calibration index to read the requested information from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return prefix:</th><td class="field-body">Medium unit prefix, see appendix for encoding.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return unit:</th><td class="field-body">Medium unit, see appendix for encoding.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return timebase:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Timebase, see appendix for encoding.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_calibration_fullscale">
+<code class="descname">get_calibration_fullscale</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_calibration_fullscale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_calibration_fullscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the fullscale flow of a specific calibration index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – The calibration index to read the requested information from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return fullscale:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">The read fullscale flow in the unit of the corresponding calibration.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_current_gas_id">
+<code class="descname">get_current_gas_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_current_gas_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_current_gas_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas ID of the currently active calibration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return gas_id:</th><td class="field-body">The read gas ID.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_current_gas_unit">
+<code class="descname">get_current_gas_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_current_gas_unit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_current_gas_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas unit of the currently active calibration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return prefix:</th><td class="field-body">Medium unit prefix, see appendix for encoding.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return unit:</th><td class="field-body">Medium unit, see appendix for encoding.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return timebase:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Timebase, see appendix for encoding.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_current_fullscale">
+<code class="descname">get_current_fullscale</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_current_fullscale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_current_fullscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the fullscale flow of the currently active calibration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return fullscale:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The read fullscale flow in the unit of the corresponding calibration.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_calibration">
+<code class="descname">set_calibration</code><span class="sig-paren">(</span><em>calibration_number</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_calibration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_calibration" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>calibration_number</strong> – The calibration number to activate.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_calibration">
+<code class="descname">get_calibration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_calibration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_calibration" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return calibration_number:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The current activated calibration number.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_calibration_volatile">
+<code class="descname">set_calibration_volatile</code><span class="sig-paren">(</span><em>calibration_number</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_calibration_volatile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_calibration_volatile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command stops the controller, changes the used calibration of the flow
+controller and starts the controller. The selected calibration is not stored to
+a non volatile memory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>calibration_number</strong> – The calibration number to activate.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_i2c_address">
+<code class="descname">set_i2c_address</code><span class="sig-paren">(</span><em>I2c_Address</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_i2c_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_i2c_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configures the I2C address of SFC6xxx</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i2c_address</strong> – The I2C address of SFC6xxx.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_i2c_address">
+<code class="descname">get_i2c_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_i2c_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_i2c_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the I2C address of SFC6xxx.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return i2c_address:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The I2C address of SFC6xxx.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_shdlc_protocol">
+<code class="descname">set_shdlc_protocol</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_shdlc_protocol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_shdlc_protocol" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> – Set the state of SHDLC protocol</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_shdlc_protocol">
+<code class="descname">get_shdlc_protocol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_shdlc_protocol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_shdlc_protocol" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return state:</th><td class="field-body">The current state of SHDLC protocol</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_modbus_rtu">
+<code class="descname">set_modbus_rtu</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_modbus_rtu"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_modbus_rtu" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> – Set the state of Modbus RTU</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_modbus_rtu">
+<code class="descname">get_modbus_rtu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_modbus_rtu"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_modbus_rtu" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return state:</th><td class="field-body">The current state of Modbus RTU</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_modbus_parity_and_stopbit">
+<code class="descname">set_modbus_parity_and_stopbit</code><span class="sig-paren">(</span><em>parity_and_stopbit</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_modbus_parity_and_stopbit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_modbus_parity_and_stopbit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Modbus Parity and Stopbit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parity_and_stopbit</strong> – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_modbus_baudrate">
+<code class="descname">set_modbus_baudrate</code><span class="sig-paren">(</span><em>Baudrate</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_modbus_baudrate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_modbus_baudrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Modbus baudrate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>baudrate</strong> – The new Modbus baudrate in bit/s. Allowed values are 9600, 19200, 38400, 57600
+and 115200 (default)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_modbus_slave_address">
+<code class="descname">set_modbus_slave_address</code><span class="sig-paren">(</span><em>slave_address</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_modbus_slave_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_modbus_slave_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Modbus slave address</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>slave_address</strong> – Modbus slave address (1..247).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_modbus_parity_and_stopbit">
+<code class="descname">get_modbus_parity_and_stopbit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_modbus_parity_and_stopbit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_modbus_parity_and_stopbit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Modbus Parity and Stopbit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return parity_and_stopbit:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_modbus_baudrate">
+<code class="descname">get_modbus_baudrate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_modbus_baudrate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_modbus_baudrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Modbus baudrate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return baudrate:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The Baudrate for Modbus [bit/s].</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_modbus_slave_address">
+<code class="descname">get_modbus_slave_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_modbus_slave_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_modbus_slave_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Modbus slave address</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return slave_address:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Modbus slave address (1..247).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_slave_address">
+<code class="descname">set_slave_address</code><span class="sig-paren">(</span><em>slave_address</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_slave_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_slave_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command change the device address.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>slave_address</strong> – The new slave address to set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_slave_address">
+<code class="descname">get_slave_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_slave_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_slave_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command change the device address.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return slave_address:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The current slave address of the device.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_baudrate">
+<code class="descname">set_baudrate</code><span class="sig-paren">(</span><em>baudrate</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.set_baudrate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.set_baudrate" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>baudrate</strong> – The new baudrate in bit/s. Allowed values are 9600, 19200, 38400, 57600 and
+115200 (default)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_baudrate">
+<code class="descname">get_baudrate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_baudrate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_baudrate" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return baudrate:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Current baudrate in bit/s.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_firmware_build">
+<code class="descname">get_firmware_build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_firmware_build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_firmware_build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the identification of the firmware build on the device. This command
+returns more detailed information than the “Get Version” command, which helps
+to identify non-released firmware builds.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return firmware_build:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">String describing the firmware build.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_product_type">
+<code class="descname">get_product_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_product_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_product_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the product type from the device.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return product_type:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">String containing the product type.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_product_name">
+<code class="descname">get_product_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_product_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_product_name" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return product_name:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">String containing the product name.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_article_code">
+<code class="descname">get_article_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_article_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_article_code" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return article_code:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The article code as an ASCII string.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_serial_number">
+<code class="descname">get_serial_number</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_serial_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_serial_number" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return serial_number:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">String containing the serial number of the SFC6xxx sensor.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_version">
+<code class="descname">get_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.get_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.get_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the version information for the hardware, firmware and SHDLC protocol.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return firmware_major:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Firmware major version number.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return firmware_minor:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Firmware minor version number.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return firmware_debug:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Firmware debug state. If the debug state is set, the firmware is in development.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return hardware_major:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Hardware major version number.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return hardware_minor:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Hardware minor version number.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return protocol_major:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Protocol major version number.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return protocol_minor:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Protocol minor version number.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.device_reset">
+<code class="descname">device_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDeviceBase.device_reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDeviceBase.device_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes a reset on the device. This has the same effect as a power cycle.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.device.</code><code class="descname">Sfc6xxxDevice</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDevice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Driver class implementation of SFC6XXX</p>
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDevice.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.close_valve">
+<code class="descname">close_valve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/device.html#Sfc6xxxDevice.close_valve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.close_valve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switch device off (close the valve by setting setpoint to 0)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.device_reset">
+<code class="descname">device_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.device_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes a reset on the device. This has the same effect as a power cycle.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_article_code">
+<code class="descname">get_article_code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_article_code" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return article_code:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The article code as an ASCII string.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_baudrate">
+<code class="descname">get_baudrate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_baudrate" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return baudrate:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Current baudrate in bit/s.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_calibration">
+<code class="descname">get_calibration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_calibration" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return calibration_number:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The current activated calibration number.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_calibration_fullscale">
+<code class="descname">get_calibration_fullscale</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_calibration_fullscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the fullscale flow of a specific calibration index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – The calibration index to read the requested information from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return fullscale:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">The read fullscale flow in the unit of the corresponding calibration.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_calibration_gas_id">
+<code class="descname">get_calibration_gas_id</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_calibration_gas_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas ID of a specific calibration index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – The calibration index to read the requested information from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return gas_id:</th><td class="field-body">The read gas ID.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_calibration_gas_unit">
+<code class="descname">get_calibration_gas_unit</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_calibration_gas_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas unit of a specific calibration index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – The calibration index to read the requested information from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return prefix:</th><td class="field-body">Medium unit prefix, see appendix for encoding.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return unit:</th><td class="field-body">Medium unit, see appendix for encoding.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return timebase:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Timebase, see appendix for encoding.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_calibration_validity">
+<code class="descname">get_calibration_validity</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_calibration_validity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether there exists a valid calibration at a specific index or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – The index to check whether there is a valid calibration or not.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return validity:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Whether there exists a valid calibration at the specified index or not.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_current_fullscale">
+<code class="descname">get_current_fullscale</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_current_fullscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the fullscale flow of the currently active calibration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return fullscale:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The read fullscale flow in the unit of the corresponding calibration.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_current_gas_id">
+<code class="descname">get_current_gas_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_current_gas_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas ID of the currently active calibration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return gas_id:</th><td class="field-body">The read gas ID.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_current_gas_unit">
+<code class="descname">get_current_gas_unit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_current_gas_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas unit of the currently active calibration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return prefix:</th><td class="field-body">Medium unit prefix, see appendix for encoding.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return unit:</th><td class="field-body">Medium unit, see appendix for encoding.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return timebase:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Timebase, see appendix for encoding.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_firmware_build">
+<code class="descname">get_firmware_build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_firmware_build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the identification of the firmware build on the device. This command
+returns more detailed information than the “Get Version” command, which helps
+to identify non-released firmware builds.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return firmware_build:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">String describing the firmware build.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_i2c_address">
+<code class="descname">get_i2c_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_i2c_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the I2C address of SFC6xxx.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return i2c_address:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The I2C address of SFC6xxx.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_modbus_baudrate">
+<code class="descname">get_modbus_baudrate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_modbus_baudrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Modbus baudrate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return baudrate:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The Baudrate for Modbus [bit/s].</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_modbus_parity_and_stopbit">
+<code class="descname">get_modbus_parity_and_stopbit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_modbus_parity_and_stopbit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Modbus Parity and Stopbit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return parity_and_stopbit:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_modbus_rtu">
+<code class="descname">get_modbus_rtu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_modbus_rtu" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return state:</th><td class="field-body">The current state of Modbus RTU</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_modbus_slave_address">
+<code class="descname">get_modbus_slave_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_modbus_slave_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Modbus slave address</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return slave_address:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Modbus slave address (1..247).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_number_of_calibrations">
+<code class="descname">get_number_of_calibrations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_number_of_calibrations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of calibrations, i.e. how many calibration the device memory is
+able to hold.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return number_of_calibrations:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Number of calibrations.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_product_name">
+<code class="descname">get_product_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_product_name" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return product_name:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">String containing the product name.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_product_type">
+<code class="descname">get_product_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_product_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the product type from the device.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return product_type:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">String containing the product type.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_serial_number">
+<code class="descname">get_serial_number</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_serial_number" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return serial_number:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">String containing the serial number of the SFC6xxx sensor.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_setpoint">
+<code class="descname">get_setpoint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_setpoint" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return setpoint:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The current setpoint with the specified scaling.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_shdlc_protocol">
+<code class="descname">get_shdlc_protocol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_shdlc_protocol" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return state:</th><td class="field-body">The current state of SHDLC protocol</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_slave_address">
+<code class="descname">get_slave_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_slave_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command change the device address.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return slave_address:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The current slave address of the device.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_user_controller_gain">
+<code class="descname">get_user_controller_gain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_user_controller_gain" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return gain:</th><td class="field-body">The current user controller gain.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_user_init_step">
+<code class="descname">get_user_init_step</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_user_init_step" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return init_step:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The current user init step.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_version">
+<code class="descname">get_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.get_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the version information for the hardware, firmware and SHDLC protocol.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return firmware_major:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Firmware major version number.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return firmware_minor:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Firmware minor version number.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return firmware_debug:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Firmware debug state. If the debug state is set, the firmware is in development.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return hardware_major:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Hardware major version number.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return hardware_minor:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Hardware minor version number.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return protocol_major:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">Protocol major version number.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return protocol_minor:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Protocol minor version number.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.measure_raw_flow">
+<code class="descname">measure_raw_flow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.measure_raw_flow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the measured raw flow ticks from the sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return flow:</th><td class="field-body">Measured raw flow in ticks.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.measure_raw_thermal_conductivity_with_closed_valve">
+<code class="descname">measure_raw_thermal_conductivity_with_closed_valve</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.measure_raw_thermal_conductivity_with_closed_valve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a thermal conductivity measurement and return the measured raw tick
+value. The valve is automatically closed during the measurement.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return thermal_conductivity:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Measured raw thermal conductivity in ticks.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.measure_temperature">
+<code class="descname">measure_temperature</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.measure_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the temperature of flow sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Return temperature:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">Measured temperature [°C].</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.read_measured_value">
+<code class="descname">read_measured_value</code><span class="sig-paren">(</span><em>scaling</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.read_measured_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The command returns the latest measured flow value. The value can be read as
+physical or normalized value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scaling</strong> – 0x01: Flow represents a physical value. The range depends on the flow
+unit and calibration range.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return measured_value:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body">The latest measured flow with the specified scaling.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_baudrate">
+<code class="descname">set_baudrate</code><span class="sig-paren">(</span><em>baudrate</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_baudrate" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>baudrate</strong> – The new baudrate in bit/s. Allowed values are 9600, 19200, 38400, 57600 and
+115200 (default)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_calibration">
+<code class="descname">set_calibration</code><span class="sig-paren">(</span><em>calibration_number</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_calibration" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>calibration_number</strong> – The calibration number to activate.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_calibration_volatile">
+<code class="descname">set_calibration_volatile</code><span class="sig-paren">(</span><em>calibration_number</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_calibration_volatile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command stops the controller, changes the used calibration of the flow
+controller and starts the controller. The selected calibration is not stored to
+a non volatile memory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>calibration_number</strong> – The calibration number to activate.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_i2c_address">
+<code class="descname">set_i2c_address</code><span class="sig-paren">(</span><em>I2c_Address</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_i2c_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configures the I2C address of SFC6xxx</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i2c_address</strong> – The I2C address of SFC6xxx.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_modbus_baudrate">
+<code class="descname">set_modbus_baudrate</code><span class="sig-paren">(</span><em>Baudrate</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_modbus_baudrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Modbus baudrate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>baudrate</strong> – The new Modbus baudrate in bit/s. Allowed values are 9600, 19200, 38400, 57600
+and 115200 (default)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_modbus_parity_and_stopbit">
+<code class="descname">set_modbus_parity_and_stopbit</code><span class="sig-paren">(</span><em>parity_and_stopbit</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_modbus_parity_and_stopbit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Modbus Parity and Stopbit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parity_and_stopbit</strong> – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_modbus_rtu">
+<code class="descname">set_modbus_rtu</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_modbus_rtu" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> – Set the state of Modbus RTU</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_modbus_slave_address">
+<code class="descname">set_modbus_slave_address</code><span class="sig-paren">(</span><em>slave_address</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_modbus_slave_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Modbus slave address</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>slave_address</strong> – Modbus slave address (1..247).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_setpoint">
+<code class="descname">set_setpoint</code><span class="sig-paren">(</span><em>scaling</em>, <em>setpoint</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_setpoint" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>scaling</strong> – 0x01: Setpoint represents a physical value. The range depends on the
+flow unit and calibration range.</li>
+<li><strong>setpoint</strong> – The new setpoint with the specified scaling.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_setpoint_and_read_measured_value">
+<code class="descname">set_setpoint_and_read_measured_value</code><span class="sig-paren">(</span><em>scaling</em>, <em>setpoint</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_setpoint_and_read_measured_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command is a combination of the two commands “Set Setpoint (0x00)” and
+“Read Measured Value (0x08)”. It is intended for process data exchange
+(setpoint and flow) and safes a lot of protocol overhead compared to separate
+command usage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>scaling</strong> – 0x01: Setpoint/flow represents physical values. The range         depends on
+the flow unit and calibration range.</li>
+<li><strong>setpoint</strong> – The new setpoint.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return measured_value:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first last">The latest measured flow.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_shdlc_protocol">
+<code class="descname">set_shdlc_protocol</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_shdlc_protocol" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> – Set the state of SHDLC protocol</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_slave_address">
+<code class="descname">set_slave_address</code><span class="sig-paren">(</span><em>slave_address</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_slave_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command change the device address.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>slave_address</strong> – The new slave address to set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_user_controller_gain">
+<code class="descname">set_user_controller_gain</code><span class="sig-paren">(</span><em>gain</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_user_controller_gain" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gain</strong> – The user controller gain to set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_user_init_step">
+<code class="descname">set_user_init_step</code><span class="sig-paren">(</span><em>init_step</em><span class="sig-paren">)</span><a class="headerlink" href="#sensirion_uart_sfc6xxx.device.Sfc6xxxDevice.set_user_init_step" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>init_step</strong> – the user init step to set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sensirion_uart_sfc6xxx.commands">
+<span id="commands"></span><h3>Commands<a class="headerlink" href="#module-sensirion_uart_sfc6xxx.commands" title="Permalink to this headline">¶</a></h3>
+<p>The transfer classes specify the data that is transferred between host and sensor. The generated transfer classes
+are used by the driver class and not intended for direct use.</p>
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.ReadMeasuredValue">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">ReadMeasuredValue</code><span class="sig-paren">(</span><em>scaling</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#ReadMeasuredValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.ReadMeasuredValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>The command returns the latest measured flow value. The value can be read as
+physical or normalized value.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.SetSetpointAndReadMeasuredValue">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">SetSetpointAndReadMeasuredValue</code><span class="sig-paren">(</span><em>scaling</em>, <em>setpoint</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#SetSetpointAndReadMeasuredValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.SetSetpointAndReadMeasuredValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command is a combination of the two commands “Set Setpoint (0x00)” and
+“Read Measured Value (0x08)”. It is intended for process data exchange
+(setpoint and flow) and safes a lot of protocol overhead compared to separate
+command usage.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.MeasureRawFlow">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">MeasureRawFlow</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#MeasureRawFlow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.MeasureRawFlow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the measured raw flow ticks from the sensor.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.MeasureRawThermalConductivityWithClosedValve">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">MeasureRawThermalConductivityWithClosedValve</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#MeasureRawThermalConductivityWithClosedValve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.MeasureRawThermalConductivityWithClosedValve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a thermal conductivity measurement and return the measured raw tick
+value. The valve is automatically closed during the measurement.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.MeasureTemperature">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">MeasureTemperature</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#MeasureTemperature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.MeasureTemperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the temperature of flow sensor.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetNumberOfCalibrations">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetNumberOfCalibrations</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetNumberOfCalibrations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetNumberOfCalibrations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of calibrations, i.e. how many calibration the device memory is
+able to hold.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetCalibrationValidity">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetCalibrationValidity</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetCalibrationValidity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetCalibrationValidity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether there exists a valid calibration at a specific index or not.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetCalibrationGasId">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetCalibrationGasId</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetCalibrationGasId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetCalibrationGasId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas ID of a specific calibration index.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetCalibrationGasUnit">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetCalibrationGasUnit</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetCalibrationGasUnit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetCalibrationGasUnit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas unit of a specific calibration index.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetCalibrationFullscale">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetCalibrationFullscale</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetCalibrationFullscale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetCalibrationFullscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the fullscale flow of a specific calibration index.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetCurrentGasId">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetCurrentGasId</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetCurrentGasId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetCurrentGasId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas ID of the currently active calibration.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetCurrentGasUnit">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetCurrentGasUnit</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetCurrentGasUnit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetCurrentGasUnit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the gas unit of the currently active calibration.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetCurrentFullscale">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetCurrentFullscale</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetCurrentFullscale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetCurrentFullscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the fullscale flow of the currently active calibration.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.SetCalibrationVolatile">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">SetCalibrationVolatile</code><span class="sig-paren">(</span><em>calibration_number</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#SetCalibrationVolatile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.SetCalibrationVolatile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command stops the controller, changes the used calibration of the flow
+controller and starts the controller. The selected calibration is not stored to
+a non volatile memory.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.SetI2cAddress">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">SetI2cAddress</code><span class="sig-paren">(</span><em>I2c_Address</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#SetI2cAddress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.SetI2cAddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configures the I2C address of SFC6xxx</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetI2cAddress">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetI2cAddress</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetI2cAddress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetI2cAddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the I2C address of SFC6xxx.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.SetModbusParityAndStopbit">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">SetModbusParityAndStopbit</code><span class="sig-paren">(</span><em>parity_and_stopbit</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#SetModbusParityAndStopbit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.SetModbusParityAndStopbit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Modbus Parity and Stopbit</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.SetModbusBaudrate">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">SetModbusBaudrate</code><span class="sig-paren">(</span><em>Baudrate</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#SetModbusBaudrate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.SetModbusBaudrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Modbus baudrate</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.SetModbusSlaveAddress">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">SetModbusSlaveAddress</code><span class="sig-paren">(</span><em>slave_address</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#SetModbusSlaveAddress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.SetModbusSlaveAddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the Modbus slave address</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetModbusParityAndStopbit">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetModbusParityAndStopbit</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetModbusParityAndStopbit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetModbusParityAndStopbit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Modbus Parity and Stopbit</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetModbusBaudrate">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetModbusBaudrate</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetModbusBaudrate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetModbusBaudrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Modbus baudrate</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetModbusSlaveAddress">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetModbusSlaveAddress</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetModbusSlaveAddress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetModbusSlaveAddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Modbus slave address</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.SetSlaveAddress">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">SetSlaveAddress</code><span class="sig-paren">(</span><em>slave_address</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#SetSlaveAddress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.SetSlaveAddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command change the device address.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetSlaveAddress">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetSlaveAddress</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetSlaveAddress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetSlaveAddress" title="Permalink to this definition">¶</a></dt>
+<dd><p>This command change the device address.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetFirmwareBuild">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetFirmwareBuild</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetFirmwareBuild"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetFirmwareBuild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the identification of the firmware build on the device. This command
+returns more detailed information than the “Get Version” command, which helps
+to identify non-released firmware builds.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetProductType">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetProductType</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetProductType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetProductType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the product type from the device.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.GetVersion">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">GetVersion</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#GetVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.GetVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the version information for the hardware, firmware and SHDLC protocol.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="sensirion_uart_sfc6xxx.commands.DeviceReset">
+<em class="property">class </em><code class="descclassname">sensirion_uart_sfc6xxx.commands.</code><code class="descname">DeviceReset</code><a class="reference internal" href="_modules/sensirion_uart_sfc6xxx/commands.html#DeviceReset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sensirion_uart_sfc6xxx.commands.DeviceReset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes a reset on the device. This has the same effect as a power cycle.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-sensirion_uart_sfc6xxx.result_types">
+<span id="result-types"></span><h3>Result Types<a class="headerlink" href="#module-sensirion_uart_sfc6xxx.result_types" title="Permalink to this headline">¶</a></h3>
+<p>The signal classes specify transformations of the raw sensor signals into a meaningful units.
+The generated signal types are used by the driver class and not intended for direct use.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="build-documentation.html" class="btn btn-neutral float-left" title="Build documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022 Sensirion AG, Switzerland
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
