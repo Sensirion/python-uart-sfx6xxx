@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Run tests &mdash; sensirion_uart_sfc6xxx 0.1.0 documentation</title>
+  <title>Run tests &mdash; sensirion_uart_sfx6xxx 0.1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
@@ -29,7 +29,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> sensirion_uart_sfc6xxx
+            <a href="index.html" class="icon icon-home"> sensirion_uart_sfx6xxx
           </a>
               <div class="version">
                 0.1.0
@@ -59,7 +59,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">sensirion_uart_sfc6xxx</a>
+          <a href="index.html">sensirion_uart_sfx6xxx</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -80,19 +80,17 @@
              
   <section id="run-tests">
 <h1>Run tests<a class="headerlink" href="#run-tests" title="Permalink to this headline"></a></h1>
-<p>Unit tests can be run with <a class="reference external" href="https://pytest.org">pytest</a>.</p>
-<p>To install requried packages for testing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>test<span class="o">]</span><span class="w">       </span><span class="c1"># Install requirements</span>
+<p>Unit tests can be run with <a class="reference external" href="https://pytest.org">pytest</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>test<span class="o">]</span><span class="w">      </span><span class="c1"># Install test requirements</span>
 </pre></div>
 </div>
-<p>We provide a mock implementation of the sensor in <cite>sensirion_uart_sfc6xxx/response_provider.py</cite>.
-To run tests against the mock just run pytest:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w">                         </span><span class="c1"># Run all tests using a mocked sensor</span>
+<p>We provide a mock implementation that allows you to execute the tests for SFX6XXX without hardware.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w">                      </span><span class="c1"># Run all tests for SFX6XXX using a driver mock</span>
 </pre></div>
 </div>
-<p>To run the tests against real hardware, you must have your SFC6XXX sensor connected to a Serial Port of your developement machine.
-Pass the serial port used, e.g. COM1, when running the tests:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>--serial-port<span class="o">=</span>COM1<span class="w">       </span><span class="c1"># Run all tests against connected sensor</span>
+<p>To run the tests against real hardware, you must have your SFX6XXX sensor connected to a serial port of your
+development machine. Pass the serial port used, e.g. COM1, as command line argument when running the tests:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>--serial-port<span class="o">=</span>COM1<span class="w">   </span><span class="c1"># Run all tests for SFX6XXX an the sensor attached to COM1</span>
 </pre></div>
 </div>
 </section>
