@@ -1,4 +1,5 @@
-<center><img src="DIY-SFx6xxx eval kit.jpg" width="500px"></center>
+<center><img src="DIY-SFx6xxx eval kit.jpg" align="center width="500px"></center>
+
 # Instructions to get started
 
 You can find all the necessary instructions to help you get started with DIY-multiple MFC Evaluation Kit in the document here:
