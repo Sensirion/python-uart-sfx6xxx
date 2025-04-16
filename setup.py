@@ -12,7 +12,7 @@ python_requires = '>=3.6, <4'
 # Packages that this package imports. List everything apart from standard lib packages.
 install_requires = [
     'sensirion-shdlc-driver~=0.1.5',
-    'sensirion-driver-adapters>=2.1.8,<3.0',
+    'sensirion-driver-adapters>=2.1.9,<3.0',
     'sensirion-driver-support-types~=0.2.0',
 ]
 
@@ -22,12 +22,6 @@ extras_require = {
         'flake8~=3.7.8',
         'pytest~=6.2.5',
         'pytest-cov~=3.0.0',
-    ],
-    'docs': [
-        'click==8.0.4',
-        'jinja2==3.0.1',
-        'sphinx~=2.2.1',
-        'sphinx-rtd-theme~=0.4.3',
     ]
 }
 
@@ -39,11 +33,9 @@ if result:
 else:
     raise RuntimeError("Unable to find version string")
 
-# Use README.rst and CHANGELOG.rst as package description
+# Use README.rst and CHANGELOG.md as package description
 root_path = os.path.dirname(__file__)
-readme = open(os.path.join(root_path, 'README.rst')).read()
-changelog = open(os.path.join(root_path, 'CHANGELOG.rst')).read()
-long_description = readme.strip() + "\n\n" + changelog.strip() + "\n"
+long_description = open(os.path.join(root_path, 'README.md')).read()
 
 setup(
     name='sensirion_uart_sfx6xxx',
@@ -63,17 +55,23 @@ setup(
         SFM6000D-20slm
         SFM6000D-50slm
         SFM6000D-5slm""",
-    url='https://sensirion.github.io/python-uart-sfx6xxx/',
+    project_urls={
+        "Documentation": "https://sensirion.github.io/python-uart-sfx6xxx",
+        "Repository": "https://github.com/Sensirion/python-uart-sfx6xxx",
+        "Changelog": "https://github.com/Sensirion/python-uart-sfx6xxx/blob/master/CHANGELOG.md",
+    },
     packages=find_packages(exclude=['tests', 'tests.*']),
     long_description=long_description,
+    long_description_content_type='text/markdown',
     python_requires=python_requires,
     install_requires=install_requires,
     extras_require=extras_require,
     classifiers=[
         'Intended Audience :: Developers',
-        'License :: Other/Proprietary License',
+        'License :: OSI Approved :: BSD License',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
 )
