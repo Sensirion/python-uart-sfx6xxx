@@ -3,7 +3,8 @@
 This repository contains the Python driver to communicate with a 
 Sensirion mass flow controller of the SFC6XXX family or a gas flow sensor of the SFM6XXX family over UART using the SHDLC protocol.
 
-<center><img src="images/product-image-sfx6xxx.png" width="300px"></center>
+<img src="https://raw.githubusercontent.com/Sensirion/python-uart-sfx6xxx/main/images/product-image-sfx6xxx.png"
+    width="300px" alt="SFX6XXX picture">
 
 Click [here](https://sensirion.com/sfc6000) to learn more about the Sensirion SFC6XXX mass flow controller family.
 
@@ -35,7 +36,8 @@ For special setups check out the sensor pinout in the section below.
 
 <details><summary>RS485 interface pinout</summary>
 <p>
-<img src="images/product-pinout-sfx6xxx.png" width="300px">
+<img src="https://raw.githubusercontent.com/Sensirion/python-uart-sfx6xxx/main/images/product-pinout-sfx6xxx.png"
+     width="300px" alt="sensor wiring picture">
 
 | *Pin* | *Cable Color* | *Name* | *Description*  | *Comments* |
 |-------|---------------|:------:|----------------|------------|
@@ -50,7 +52,7 @@ For special setups check out the sensor pinout in the section below.
 
 ## Documentation & Quickstart
 
-See the [documentation page](https://sensirion.github.io/python-uart-sfx6xxx) for an API description and a 
+See the [documentation page](https://sensirion.github.io/python-uart-sfx6xxx) for an API description and a
 [quickstart](https://sensirion.github.io/python-uart-sfx6xxx/execute-measurements.html) example.
 
 
